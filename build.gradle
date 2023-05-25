@@ -1,0 +1,20 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        // 添加以下 Maven 仓库
+        google()
+    }
+    dependencies {
+        // 添加 Data Binding Gradle 插件
+        classpath "com.android.tools.build:gradle:4.0.0" // 或更高版本
+    }
+}
+
+plugins {
+    id 'com.android.application' version '7.4.1' apply false
+    id 'com.android.library' version '7.4.1' apply false
+}
+
+dependencies {
+}
+

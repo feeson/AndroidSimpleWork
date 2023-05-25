@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+            android:allowBackup="true"
+            android:dataExtractionRules="@xml/data_extraction_rules"
+            android:fullBackupContent="@xml/backup_rules"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            tools:targetApi="31">
+        <service android:name="androidx.media.MediaBrowserServiceCompat" tools:ignore="MissingClass"/> <!-- 如果你计划使用MediaBrowserServiceCompat -->
+        <activity
+                android:name=".CDPlayer"
+                android:exported="false"
+                android:label="@string/title_activity_cdplayer"
+                android:theme="@style/NoActionBar">
+            <!-- 声明你要使用的服务 -->
+        </activity>
+        <activity
+                android:name=".ExampleSetting"
+                android:exported="false"/>
+        <activity android:name=".ui.settings.ExampleSetting"/>
+        <activity
+                android:name=".MainActivity"
+                android:exported="true"
+                android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
